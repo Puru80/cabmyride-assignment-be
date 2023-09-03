@@ -28,18 +28,17 @@ public class PostCodeService {
             String line = br.readLine();
             line = br.readLine();
 
-            for(int i=0;i<=279999;i++)
+            for(int i=0;i<=314999;i++)
                 line = br.readLine();
 
             int count = 0;
-
 
             while (line != null) {
                 String[] attributes = line.split(",");
                 PostCodes postCodes = createPostCode(attributes);
 
-//                if(postCodeRepository.existsByPostCode(postCodes.getPostCode()))
-//                    continue;
+                if(postCodeRepository.existsByPostCode(postCodes.getPostCode()))
+                    continue;
 
                 postCodesList.add(postCodes);
                 count++;

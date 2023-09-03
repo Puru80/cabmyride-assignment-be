@@ -3,10 +3,7 @@ package com.example.cabmyridebe;
 import com.example.cabmyridebe.db.PostCodes;
 import com.example.cabmyridebe.service.PostCodeService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,6 +20,7 @@ public class CabMyRideController {
         return "Post Code Saved";
     }
 
+    @CrossOrigin("http://127.0.0.1:5173")
     @GetMapping("/postCodes")
     public List<PostCodes> getPostCodes() {
         return postCodeService.getPostCodes();
