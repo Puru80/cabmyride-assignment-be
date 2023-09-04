@@ -20,7 +20,7 @@ public class CabMyRideController {
         return "Post Code Saved";
     }
 
-    @CrossOrigin("http://127.0.0.1:5173")
+    @CrossOrigin
     @GetMapping("/postCodes/{page}")
     public List<PostCodes> getPostCodes(@PathVariable("page") String page) {
         int pageNumber = Integer.parseInt(page);
