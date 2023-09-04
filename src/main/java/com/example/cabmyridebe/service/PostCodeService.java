@@ -65,10 +65,10 @@ public class PostCodeService {
         return postCodes;
     }
 
-    public List<PostCodes> getPostCodes() {
+    public List<PostCodes> getPostCodes(int pageNumber) {
 
         Page<PostCodes> page = postCodeRepository.findAll(PageRequest.of(
-            4,
+            pageNumber,
             2500));
 
         return (page.getContent());

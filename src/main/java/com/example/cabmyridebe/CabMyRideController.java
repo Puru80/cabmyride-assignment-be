@@ -21,9 +21,10 @@ public class CabMyRideController {
     }
 
     @CrossOrigin("http://127.0.0.1:5173")
-    @GetMapping("/postCodes")
-    public List<PostCodes> getPostCodes() {
-        return postCodeService.getPostCodes();
+    @GetMapping("/postCodes/{page}")
+    public List<PostCodes> getPostCodes(@PathVariable("page") String page) {
+        int pageNumber = Integer.parseInt(page);
+        return postCodeService.getPostCodes(pageNumber);
     }
 
 }
